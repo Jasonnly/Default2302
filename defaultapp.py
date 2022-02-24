@@ -31,6 +31,7 @@ def index():
         pred = pred[0]
         s = "The predicted default is : " + str(pred)
         return(render_template("index.html", result = s))
+        print(pred)
     else:
         return(render_template("index.html", result = "Predict Credit Card Default"))
 
