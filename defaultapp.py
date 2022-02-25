@@ -30,6 +30,7 @@ def index():
         print (income, age, loan)
         model = joblib.load("Default")
         pred = model.predict([[float(income), float(age), float(loan)]])
+        pred = pred[0]
         print(pred)
         
         s = "The predicted default is : " + str(pred)
