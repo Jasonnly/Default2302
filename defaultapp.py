@@ -30,14 +30,13 @@ def index():
         print (income, age, loan)
         model = joblib.load("Default")
         pred = model.predict([[float(income), float(age), float(loan)]])
-        pred = pred[0]
-        print(pred)
         
+        pred = pred[0]
         s = "The predicted default is : " + str(pred)
         return(render_template("index.html", result = s))
         print(pred)
     else:
-        return(render_template("index.html", result = "Predict Credit Card Default"))
+        return(render_template("index.html", result = "Predicting Credit Card Default Risk, 1 meaning default and 0 meaning no default"))
 
 
 # In[ ]:
